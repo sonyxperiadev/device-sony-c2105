@@ -1,0 +1,63 @@
+DEVICE_PROVISIONED=1
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+ril.subscription.types=NV,RUIM
+ro.com.android.dataroaming=false
+persist.radio.apm_sim_not_pwdn=1
+ro.telephony.call_ring.multiple=false
+# without this the phone will crash when there is an incoming call because the default preferred network mode is incorrect
+telephony.lteOnCdmaDevice=0
+
+ro.vendor.extension_library=/system/lib/libqc-opt.so
+
+ro.com.google.clientidbase=android-sonyericsson
+ro.com.google.clientidbase.ms=android-sonymobile
+
+## for USB
+#persist.sys.usb.config=mtp
+
+## for audio & video
+qcom.audio.init=complete
+af.resampler.quality=255
+persist.audio.fluence.mode=endfire
+persist.audio.handset.mic=digital
+media.aac_51_output_enabled=true
+#property to check if dynamic resolution change is  supported in framework
+#ro.streaming.video.drs=true
+
+## for graphics & display
+ro.sf.lcd_density=240
+# 131072 is decimal for 0x20000 to report version 2
+ro.opengles.version=131072
+# seems replaced by ro.hwui.text_small_cache_width etc.
+#ro.hwui.text_cache_width=2048
+debug.sf.hw=1
+debug.egl.hw=1
+debug.composition.type=gpu
+persist.hwc.mdpcomp.enable=true
+# cabl
+ro.qualcomm.cabl=1
+
+## for storage
+persist.fuse_sdcard=true
+
+## for wifi
+wifi.interface=wlan0
+# sending transmit power request to RIL during WiFi hotspot on/off
+ro.ril.transmitpower=true
+#property to enable user to access Google WFD settings.
+persist.debug.wfd.enable=1
+# Set the property to indicate type of virtual display to 0
+# 0 indicates that virtual display is not a Wifi display and that the
+# session is not exercised through RemoteDisplay in the android framework
+persist.sys.wfd.virtual=0
+
+## for bluetooth
+# system prop for Bluetooth Auto connect for remote initated connections
+ro.bluetooth.remote.autoconnect=true
+
+## for gps
+# cut off the link between NLP and AGPS setting.
+ro.gps.agps_provider=customized
+#system prop for switching gps driver to qmi
+persist.gps.qmienabled=true
