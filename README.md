@@ -57,3 +57,9 @@ try to reflash just the userdata again.
 
 Please see the project wiki for more information:
 https://github.com/sonyxperiadev/device-sony-c2105/wiki
+
+Project Status: 
+===============
+* Bluetooth & GPS are not working.
+* Internal storage shows only 2GB.
+* Few minor glitches.
