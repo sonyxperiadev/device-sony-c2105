@@ -1,4 +1,4 @@
-# Copyright 2013 The Android Open Source Project
+# Copyright (C) 2014 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,13 +26,15 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 TARGET_CPU_SMP := true
 
+# Inline kernel build
+TARGET_KERNEL_CONFIG := sa77_defconfig
+TARGET_KERNEL_SOURCE := kernel/sony/c2105
+
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
-TARGET_NO_RECOVERY := true
-TARGET_NO_KERNEL := false
 
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
@@ -55,18 +57,18 @@ USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/sony/c2105/egl.cfg
 ENABLE_WEBGL := true
 
-# audio is enabled
+# audio
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
 USE_PROPRIETARY_AUDIO_EXTENSIONS := false
 
-# video is enabled
+# video
 TARGET_USES_ION := true
 
-# camera is enabled
+# camera
 USE_CAMERA_STUB := false
 
-# wlan is enabled
+# wlan
 BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211

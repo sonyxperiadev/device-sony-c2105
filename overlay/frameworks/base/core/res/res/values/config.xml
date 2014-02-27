@@ -267,4 +267,7 @@
 
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">false</bool>
+    
+    <!-- Disable lockscreen translucent decor by default --> 
+    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 </resources>
